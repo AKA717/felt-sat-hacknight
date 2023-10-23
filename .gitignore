@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Compiled Python files
+*.pyc
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Configuration files
+.env
+
+# Local development settings
+local_settings.py
+
+# IDE settings
+.idea/
+.vscode/
+
+# Dependency directories
+lib/
+lib64/
+bin/
+include/
+requirements/
+libexec/
+
+# Distribution / packaging
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib64/
+
+# Python Installer logs
+pip-log.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
