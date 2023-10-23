@@ -11,9 +11,22 @@ def main(page):
             weight=ft.FontWeight.BOLD,
         ))
     
-    lv = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
+    page.horizontal_alignment='center'
+    page.vertical_alignment='center'
+
+    p_ring = ft.ProgressRing(
+        color=ft.colors.GREEN_ACCENT_700,
+        bgcolor=ft.colors.AMBER_200
+
+    )
+
+    page.add(p_ring)
+    
+    lv = ft.ListView(expand=1, spacing=10, padding=20)
 
     news  = fetch_news()
+
+    page.update()
     
     for n in news:
         lv.controls.append(
@@ -22,7 +35,7 @@ def main(page):
                 content=ft.Column(
                     [
                         ft.ListTile(
-                            leading=ft.Icon(ft.icons.ALBUM),
+                            leading=ft.Icon(ft.icons.NEWSPAPER),
                             title=ft.Text(n['title']),
                             subtitle=ft.Text(
                                 n['url']
@@ -32,6 +45,8 @@ def main(page):
                 ),
                 expand=True,
                 padding=10,
+                border=ft.border.all(width=3,color=ft.colors.GREEN_ACCENT_700),
+                border_radius=10
             )
         )
         )
