@@ -2,6 +2,11 @@ import flet as ft
 from scrape import fetch_news
 
 def main(page):
+
+    def  open_repo(e,url):
+        print(url)
+        page.launch_url(url)
+
     page.title = "BestOfHackerNews"
 
     page.add(ft.Text(
@@ -14,13 +19,13 @@ def main(page):
     page.horizontal_alignment='center'
     page.vertical_alignment='center'
 
-    p_ring = ft.ProgressRing(
-        color=ft.colors.GREEN_ACCENT_700,
-        bgcolor=ft.colors.AMBER_200
+    # p_ring = ft.ProgressRing(
+    #     color=ft.colors.GREEN_ACCENT_700,
+    #     bgcolor=ft.colors.AMBER_200
 
-    )
+    # )
 
-    page.add(p_ring)
+    # page.add(p_ring)
     
     lv = ft.ListView(expand=1, spacing=10, padding=20)
 
@@ -39,7 +44,8 @@ def main(page):
                             title=ft.Text(n['title']),
                             subtitle=ft.Text(
                                 n['url']
-                            )
+                            ),
+                            on_click=lambda e: open_repo(e,url=n['url'])
                         )
                     ]
                 ),
