@@ -2,6 +2,9 @@ import requests
 import ast
 from concurrent.futures import ThreadPoolExecutor
 
+def insertion_sort(list):
+    print(list)
+
 def fetch_news():
     def fetch_single_news(news_id):
         news_url = f"https://hacker-news.firebaseio.com/v0/item/{news_id}.json?print=pretty"
@@ -35,6 +38,7 @@ def fetch_news():
         # Filter out None values (failed requests)
         news_list = [news for news in news_list if news is not None]
 
+        insertion_sort(news_list)
         return news_list
 
     else:
@@ -43,4 +47,4 @@ def fetch_news():
 
 if __name__ == "__main__":
     news_list = fetch_news()
-    print(news_list)
+    #print(news_list)
